@@ -1,17 +1,37 @@
-import Image from "next/image";
-import cover from "@/assets/cover.jpg";
 import { differenceInYears } from "date-fns";
-import { getDictionary } from "@/app/[lang]/didtionaries";
+import React from "react";
+import picture from "@/assets/me-walking.png";
+import Image from "next/image";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
-export const SectionTwo = async () => {
+const AboutMe = () => {
   const yearsOfExperience = differenceInYears(new Date(), new Date(2021, 6, 1));
 
   return (
-    <section className="grid grid-cols-2 gap-24 relative w-2/3 h-auto m-auto my-52">
-      <h1 className="text-3xl font-bold text-muted-foreground text-center">
-        About me.
-      </h1>
-      <div className="flex flex-col gap-5">
+    <section
+      className="flex flex-col
+     lg:flex-row relative h-auto lg:h-auto w-screen items-center justify-center"
+    >
+      <div className="flex flex-col mt-20 md:mt-10 w-auto lg:w-2/3 gap-5 text-justify p-12 sm:p-20 lg:p-40 ">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <Link href="/">Home</Link>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>/</BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <p className="text-white">About me</p>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <h1 className="text-3xl text-muted-foreground">About me.</h1>
         <p>
           Hi there! I&apos;m Raphael, a passionate front-end developer with a
           love for crafting elegant and user-friendly interfaces. With{" "}
@@ -48,6 +68,12 @@ export const SectionTwo = async () => {
           together!
         </p>
       </div>
+      <div className="relative w-auto md:w-1/4  opacity-50">
+        <Image src={picture} alt="Raphael's picture" width={350} />
+        <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black to-transparent " />
+      </div>
     </section>
   );
 };
+
+export default AboutMe;
