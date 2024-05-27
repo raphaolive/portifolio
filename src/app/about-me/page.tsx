@@ -17,7 +17,7 @@ const AboutMe = () => {
   return (
     <section
       className="flex flex-col
-     lg:flex-row relative h-auto lg:h-auto w-screen items-center justify-center"
+     lg:flex-row relative min-h-screen w-screen items-center justify-center"
     >
       <div className="flex flex-col mt-20 md:mt-10 w-auto lg:w-2/3 gap-5 text-justify p-12 sm:p-20 lg:p-40 ">
         <Breadcrumb>
@@ -27,7 +27,7 @@ const AboutMe = () => {
             </BreadcrumbItem>
             <BreadcrumbSeparator>/</BreadcrumbSeparator>
             <BreadcrumbItem>
-              <p className="text-white">About me</p>
+              <p className="text-foreground">About me</p>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -68,7 +68,7 @@ const AboutMe = () => {
           together!
         </p>
       </div>
-      <div className="relative w-auto md:w-1/4  opacity-50">
+      <div className="relative w-auto md:w-1/4  opacity-40">
         <Image src={picture} alt="Raphael's picture" width={350} />
         <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-black to-transparent " />
       </div>

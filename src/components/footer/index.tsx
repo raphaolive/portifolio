@@ -9,7 +9,7 @@ import {
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col sm:flex-row relative w-screen bg-gray-300 dark:bg-background px-10 md:px-20 py-10 items-center justify-between text-1xl gap-10 md:gap-0">
+    <footer className="flex flex-col sm:flex-row w-screen bg-gray-300 dark:bg-background px-10 md:px-20 py-10 items-center justify-between text-1xl gap-10 md:gap-0">
       <div>
         <Button variant="link">
           <Link href="https://github.com/raphaolive/" target="_blank">
