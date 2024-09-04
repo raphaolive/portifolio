@@ -1,10 +1,14 @@
-import { Box, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 
 import React from "react";
 
-export default function Introduce() {
+export default function Introduce({
+  introduceContent,
+}: {
+  introduceContent: React.ReactNode;
+}) {
   return (
-    <Box pos="relative" h={[150, 200, 300]}>
+    <Box pos="relative" h={[150, 200, 300]} mt="60x">
       <video
         style={{
           width: "100%",
@@ -25,18 +29,7 @@ export default function Introduce() {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <Image
-          alt="profie-picture"
-          src="https://github.com/raphaolive.png"
-          rounded="full"
-          height={["50px", "80px", "100px"]}
-        />
-        <Box>
-          <Heading fontSize={["md", "lg", "35px"]}>I&apos;m Rapha Olive</Heading>
-          <Text fontSize={["xs", "md", "lg"]}>
-            Front-end developer (React, NextJs / React / Native)
-          </Text>
-        </Box>
+        {introduceContent}
       </HStack>
     </Box>
   );

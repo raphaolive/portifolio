@@ -1,6 +1,6 @@
-export const wellcome = [
-  "Hi, I&apos;m Rapha, a passionate React.js and React Native developer based in São Francisco do Sul, SC. With a strong foundation in front-end development, I specialize in building intuitive and responsive web and mobile applications. My journey in tech started when I transitioned from teaching English to the world of coding, and I&apos;ve been hooked ever since.",
-  "I love working with Next.js for its powerful features and flexibility, and React Native allows me to bring the same level of excellence to mobile platforms. My goal is to create seamless user experiences by writing clean, efficient code and constantly pushing the boundaries of what&apos;s possible with modern web technologies.",
+export const welcome = [
+  "Hi, I'm Rapha, a passionate React.js and React Native developer based in São Francisco do Sul, SC. With a strong foundation in front-end development, I specialize in building intuitive and responsive web and mobile applications. My journey in tech started when I transitioned from teaching English to the world of coding, and I've been hooked ever since.",
+  "I love working with Next.js for its powerful features and flexibility, and React Native allows me to bring the same level of excellence to mobile platforms. My goal is to create seamless user experiences by writing clean, efficient code and constantly pushing the boundaries of what's possible with modern web technologies.",
 ];
 
 export const bio = [
@@ -23,6 +23,6 @@ export const bio = [
   },
   {
     year: "2024",
-    text: "Now, as a junior developer, I&apos;m fully immersed in the world of React.js, Next.js, and React Native. My focus is on building intuitive, high-performance applications, and I continue to learn and grow with each new challenge. I'm excited to see where this journey will take me next.",
+    text: "Now, as a junior developer, I'm fully immersed in the world of React.js, Next.js, and React Native. My focus is on building intuitive, high-performance applications, and I continue to learn and grow with each new challenge. I'm excited to see where this journey will take me next.",
   },
 ];
