@@ -5,11 +5,15 @@ import {
   HStack,
   Heading,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Dispatch, SetStateAction } from "react";
-import { Moon, Sun } from "@phosphor-icons/react";
+import { Hamburger, Moon, Sun } from "@phosphor-icons/react";
 
 import { PagesType } from "@/pages";
 
@@ -17,11 +21,18 @@ type Props = {
   onSetPage: Dispatch<SetStateAction<PagesType>>;
 };
 
+type MenuProps = Props & {
+  toggleColorMode: () => void;
+  toggleIcon: JSX.Element;
+};
+
 export default function Navbar({ onSetPage }: Props) {
   const { toggleColorMode } = useColorMode();
-
   const navbarBgColor = useColorModeValue("black.100", "black.900");
   const toggleIcon = useColorModeValue(<Moon size={22} />, <Sun size={22} />);
+  // const { width } = useWindowDimensions();
+
+  const width = 500;
 
   return (
     <Box
@@ -33,11 +44,10 @@ export default function Navbar({ onSetPage }: Props) {
     >
       <Container
         display="flex"
-        flexDir={["column", "row"]}
-        gap={4}
         justifyContent="space-between"
         alignItems="center"
         padding={3}
+        gap={4}
       >
         <Heading fontSize="md">
           <Button variant="unstyled" onClick={() => onSetPage("home")}>
@@ -59,13 +69,13 @@ export default function Navbar({ onSetPage }: Props) {
           >
             Contact
           </Button>
+          <IconButton
+            colorScheme="yellow"
+            aria-label="toggle-theme"
+            icon={toggleIcon}
+            onClick={toggleColorMode}
+          />
         </HStack>
-        <IconButton
-          colorScheme="yellow"
-          aria-label="toggle-theme"
-          icon={toggleIcon}
-          onClick={toggleColorMode}
-        />
       </Container>
     </Box>
   );

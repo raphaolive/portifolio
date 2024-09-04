@@ -8,7 +8,7 @@ export default function Introduce({
   introduceContent: React.ReactNode;
 }) {
   return (
-    <Box pos="relative" h={[150, 200, 300]} mt="60x">
+    <Box pos="relative" h={[150, 200, 300]} mt="64px">
       <video
         style={{
           width: "100%",
@@ -25,9 +25,11 @@ export default function Introduce({
         position="absolute"
         style={{
           top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(0, -50%)",
         }}
+        width="100%"
+        justifyContent="center"
+        padding={10}
       >
         {introduceContent}
       </HStack>

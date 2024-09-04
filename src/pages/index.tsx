@@ -16,7 +16,7 @@ const WelcomeContent = () => (
       rounded="full"
       height={["50px", "80px", "100px"]}
     />
-    <Box ml={4}>
+    <Box ml={4} >
       <Heading
         as={motion.h1}
         initial={{ opacity: 0 }}
