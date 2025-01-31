@@ -26,3 +26,6 @@ export const bio = [
     text: "Now, as a junior developer, I'm fully immersed in the world of React.js, Next.js, and React Native. My focus is on building intuitive, high-performance applications, and I continue to learn and grow with each new challenge. I'm excited to see where this journey will take me next.",
   },
 ];
+
+export const getInTouch =
+  "Let's build something awesome together! Whether you have a project, an idea, or just want to chat about tech, my inbox is always open. Drop me a message!";

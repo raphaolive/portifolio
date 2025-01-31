@@ -5,17 +5,12 @@ import {
   HStack,
   Heading,
   IconButton,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { Dispatch, SetStateAction } from "react";
-import { Hamburger, Moon, Sun } from "@phosphor-icons/react";
-
-import { PagesType } from "@/pages";
+import { Moon, Sun } from "@phosphor-icons/react";
+import { PagesType } from "@/utils/types";
 
 type Props = {
   onSetPage: Dispatch<SetStateAction<PagesType>>;

@@ -9,44 +9,22 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { bio, welcome } from "@/utils/bio";
+import { bio, welcome } from "@/utils/texts";
+import Paragraph from "./motion/paragraph";
+import ParagraphWrapper from "./motion/paragraph-wrapper";
+import { Dispatch } from "react";
+import { PagesType } from "@/utils/types";
 
-export default function Welcome() {
+export default function Welcome({
+  onSetPage,
+}: {
+  onSetPage: Dispatch<React.SetStateAction<PagesType>>;
+}) {
   const myWorksButtonScheme = useColorModeValue("yellow", "teal");
 
-  const motionParentVariant = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.5,
-      },
-    },
-  };
-
-  const motionChildrenVariant = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
   return (
-    <Box
-      as={motion.section}
-      variants={motionParentVariant}
-      initial="hidden"
-      animate="show"
-    >
-      <VStack
-        as={motion.div}
-        variants={motionChildrenVariant}
-        initial="hidden"
-        animate="show"
-        alignItems="start"
-        gap={6}
-      >
+    <ParagraphWrapper>
+      <Paragraph gap={6}>
         <Heading fontSize="lg">Welcome to My Portfolio</Heading>
         <AnimatePresence>
           {welcome.map((content, index) => (
@@ -56,18 +34,16 @@ export default function Welcome() {
           ))}
         </AnimatePresence>
 
-        <Button alignSelf="center" colorScheme={myWorksButtonScheme} mt={12}>
+        <Button
+          alignSelf="center"
+          colorScheme={myWorksButtonScheme}
+          mt={12}
+          onClick={() => onSetPage("projects")}
+        >
           my works
         </Button>
-      </VStack>
-      <VStack
-        as={motion.div}
-        variants={motionChildrenVariant}
-        initial="hidden"
-        animate="show"
-        alignItems="start"
-        gap={6}
-      >
+      </Paragraph>
+      <Paragraph gap={6} delay={1}>
         <Heading fontSize="lg">Bio</Heading>
         <Grid gridTemplateColumns="50px 1fr" gap={2}>
           {bio.map((item) => (
@@ -81,7 +57,7 @@ export default function Welcome() {
             </>
           ))}
         </Grid>
-      </VStack>
-    </Box>
+      </Paragraph>
+    </ParagraphWrapper>
   );
 }
